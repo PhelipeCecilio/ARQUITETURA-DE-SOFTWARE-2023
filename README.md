@@ -10,8 +10,14 @@ O Healthfully é composto por diferentes elementos, incluindo unidades de saúde
 * [RANDERSON FRANCELES DE SOUSA FONCECA](https://github.com/RandersonF)
 * [TAYNA CRISLLEN JOSE DE SANTANA](https://github.com/taynasantana)
   
-## Histórias de usuário
+## 📗 Histórias de usuário
 
 https://github.com/users/PhelipeCecilio/projects/2/views/1
 
-## Diagrama infra
+## Escolha da arquitetura
+* MVC
+* Cliente-Servidor
+
+## Diagrama infraestrutura
+
+![Diagrama de infra](Diagramas/Diagrama_de_infra.jpg)
