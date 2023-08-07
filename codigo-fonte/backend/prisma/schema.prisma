@@ -8,6 +8,12 @@ datasource db {
 
 }
 
+enum Role {
+  ADMIN
+  MEDICO
+  PACIENTE
+}
+
 model user {
   id        String    @id @default(cuid())
   name      String
@@ -15,4 +21,5 @@ model user {
   password  String
   createdAt DateTime  @default(now())
   updatedAt DateTime  @default(now())
+  role      Role      @default(PACIENTE)
 }
