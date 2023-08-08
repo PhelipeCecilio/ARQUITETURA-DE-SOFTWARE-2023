@@ -1,24 +1,23 @@
-import express from 'express'
-import {UserController} from "../controllers/UserController";
+import express from "express";
+import { UserController } from "../controllers/UserController";
+import { AuthController } from "../controllers/AuthController";
+import { AuthMiddleware } from "../middlewares/AuthMiddleware";
 
-const routes = express.Router()
+const routes = express.Router();
 
-const userController = new UserController();
+routes.post("/signup", UserController.store);
+routes.post("/login", AuthController.store);
 
-routes.get('/', (req: express.Request, res: express.Response) => {
-    res.status(200).json({message: 'API Request'})
-})
+// All routes below require authentication
+routes.use(AuthMiddleware.isAuthenticated);
 
-//TODO: pegar as informações do usuário para validar um token
-routes.post('/login', (req: express.Request, res: express.Response) => {
-    console.log(req.body);
-    res.status(200).json({message: 'API Request', user: req.body.user, password: req.body.password})
-})
+routes.get("/users/:email", UserController.show);
+routes.put("/users/:email", UserController.update);
 
-routes.post('/user', userController.createUser);
-routes.get('/user/:email', userController.getUser);
-routes.get('/users', userController.listUsers);
-routes.put("/user/:id", userController.updateUser);
-routes.delete("/user/:id", userController.deleteUser);
+// All routes bellow require to be admin
+routes.use(AuthMiddleware.isAdmin);
 
-export default routes
+routes.get("/users", UserController.index);
+routes.delete("/users/:email", AuthMiddleware.isAdmin, UserController.delete);
+
+export default routes;
