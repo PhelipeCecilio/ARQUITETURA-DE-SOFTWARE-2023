@@ -132,7 +132,7 @@ export const swaggerDocument: swaggerUI.JsonObject = {
             },
         },
         {
-            url: "https://foorumufg.vercel.app",
+            url: "https://healthfully.vercel.app",
             description: "The production API server",
             variables: {
                 env: {
