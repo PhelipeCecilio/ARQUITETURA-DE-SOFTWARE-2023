@@ -35,6 +35,7 @@ https://github.com/users/PhelipeCecilio/projects/2/views/1
 ## Escolha da arquitetura
 * MVC
 * Cliente-Servidor
+* (BFF) Backend For Frontend
 
 ## Diagrama infraestrutura
 
