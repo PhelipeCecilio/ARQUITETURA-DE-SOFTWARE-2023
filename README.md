@@ -33,9 +33,14 @@ O Healthfully oferece uma série de benefícios, incluindo:
 https://github.com/users/PhelipeCecilio/projects/2/views/1
 
 ## Escolha da arquitetura
-* MVC
-* Cliente-Servidor
+### Backend:
 * (BFF) Backend For Frontend
+* Arquitetura em camadas
+### Frontend WEB:
+* Arquitetura Flux
+### Frontend Mobile:
+* 
+  
 
 ## Diagrama infraestrutura
 
